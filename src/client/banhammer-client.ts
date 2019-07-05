@@ -49,7 +49,7 @@ export class BanHammerClient extends Client {
   }
 
 	private async onPause(): Promise<void> {
-    await this.setDefaultSetting('prefix', '!');
+    await this.setDefaultSetting('prefix', '!g');
     this.continue();
 	}
 	
