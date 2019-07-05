@@ -1,14 +1,15 @@
 import { Message } from '@yamdbf/core';
-import { BanHammerClient } from '../client/banhammer-client';
-
+import { GuildMember } from 'discord.js';
+import { ConfigService } from '../config/config.service'; 
 
 export async function checkChannelPermissions(
 	message: Message, 
 	args: any[], 
-	authorizedChannelId: string,
+	config: ConfigService,
 	owners: string[]
 	// @ts-ignore
 	): Promise<[Message, any[]]>{
-	if (message.channel.id === authorizedChannelId) { return [message, args]; }
+	const member: GuildMember = message.member;
+	if ((message.channel.id === config.discord.authorizedChannelId) && member.roles.has(config.discord.authorizedRoleId)) { return [message, args]; }
 	if ((owners.indexOf(message.author.id) >= 0) && message.channel.type === 'dm') { return [message, args]; }
 }

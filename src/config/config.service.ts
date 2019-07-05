@@ -16,8 +16,9 @@ export class ConfigService {
 
   public get discord(): IDiscordConfig {
     return {
+			authorizedChannelId: this.envConfig.DISCORD_AUTH_CHANNEL_ID,
+			authorizedRoleId: this.envConfig.DISCORD_AUTH_ROLE_ID,
       token: this.envConfig.DISCORD_BOT_TOKEN,
-      authorizedChannelId: this.envConfig.DISCORD_AUTH_CHANNEL_ID
     };
   }
 
@@ -39,8 +40,10 @@ export class ConfigService {
         .default('development'),
 
       // Discord
-      DISCORD_BOT_TOKEN: Joi.string().required(),
-      DISCORD_AUTH_CHANNEL_ID: Joi.string().required(),
+			DISCORD_AUTH_CHANNEL_ID: Joi.string().required(),
+			DISCORD_AUTH_ROLE_ID: Joi.string().required(),
+      DISCORD_BOT_TOKEN: Joi.string().required()
+
     }).unknown();
 
     const { error, value: validatedEnvConfig } = Joi.validate(envConfig, envVarsSchema);

@@ -22,7 +22,7 @@ export class BanHammerClient extends Client {
 		});
 
 		// Attach middleware
-    this.use((message: Message, args: any[]) => checkChannelPermissions(message, args, config.discord.authorizedChannelId, this.owner));
+    this.use((message: Message, args: any[]) => checkChannelPermissions(message, args, config, this.owner));
 
 		// Bind events to local client methods
 		this.on('ready', this.onReady);
