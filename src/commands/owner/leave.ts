@@ -24,6 +24,13 @@ import { AppLogger } from '../../util/app-logger';
 		const guild: Guild | undefined = this.client.guilds.get(args[0]);
 		if (!args[0] || !args[0].match(/!?(\d{17,19})/g)) { return message.reply('an invalid Guild ID was given.'); }
 		if (!guild) { return message.reply(''); }
+		try {
+			await guild.leave();
+		} catch (err) {
+			this.logger.error(`Error when leaving ${guild.name} (${guild.id}): `, err);
+
+			return message.reply(` an error occurred: \`${err.message}\``)
+		}
 
 		return message.author.send(`I have successfully left ${guild.name} (${guild.id}).`);
 	 }
