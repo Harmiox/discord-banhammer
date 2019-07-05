@@ -23,7 +23,7 @@ import { AppLogger } from '../../util/app-logger';
 	 public async action(message: Message, args: string[]): Promise<Message | Message[]> {
 		const guild: Guild | undefined = this.client.guilds.get(args[0]);
 		if (!args[0] || !args[0].match(/!?(\d{17,19})/g)) { return message.reply('an invalid Guild ID was given.'); }
-		if (!guild) { return message.reply(''); }
+		if (!guild) { return message.reply("I'm not currently in that guild."); }
 		try {
 			await guild.leave();
 		} catch (err) {
