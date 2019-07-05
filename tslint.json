@@ -1,0 +1,25 @@
+{
+	"defaultSeverity": "error",
+	"extends": [
+		"tslint:recommended",
+		"tslint-config-prettier"
+	],
+	"jsRules": {},
+	"rules": {
+		"no-relative-imports": false,
+		"missing-jsdoc": false,
+		"export-name": false,
+		"interface-name": false,
+		"semicolon": [true, "always", "ignore-bound-class-methods"],
+		"no-parameter-properties": false,
+		"no-unnecessary-class": false,
+		"no-backbone-get-set-outside-model": false,
+		"variable-name": [true, "allow-leading-underscore"],
+		"member-ordering": false
+	},
+	"rulesDirectory": [],
+	"baseUrl": "./src",
+	"paths": {
+		"*": ["*"]
+	}
+}

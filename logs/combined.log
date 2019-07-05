@@ -1,0 +1,19 @@
+{"level":"info","message":"Initiating BanHammer..."}
+{"level":"info","message":"1562364081881"}
+{"level":"info","message":"Initiating BanHammer..."}
+{"level":"info","message":"1562364456734"}
+{"level":"info","message":"Initiating BanHammer..."}
+{"level":"info","message":"BanHammerClient has been started."}
+{"level":"info","message":"1562364609494"}
+{"level":"info","message":"BanHammerClient with shardId #0 is ready (3 guilds)"}
+{"level":"info","message":"Initiating BanHammer..."}
+{"level":"info","message":"BanHammerClient has been started."}
+{"level":"info","message":"1562365005753"}
+{"level":"info","message":"BanHammerClient with shardId #0 is ready (3 guilds)"}
+{"name":"DiscordAPIError","message":"Error when banning in guild '596817311277645849' for 'Missing Permissions'. Missing Permissions","code":50013,"level":"error","stack":"DiscordAPIError: Missing Permissions\n    at item.request.gen.end (/Users/juanquenga/Documents/GitHub/banhammer/node_modules/@yamdbf/core/node_modules/discord.js/src/client/rest/RequestHandlers/Sequential.js:68:65)\n    at then (/Users/juanquenga/Documents/GitHub/banhammer/node_modules/snekfetch/src/index.js:215:21)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"name":"DiscordAPIError","message":"Error when banning in guild '596817311277645849' for 'Missing Permissions'. Missing Permissions","code":50013,"level":"error","stack":"DiscordAPIError: Missing Permissions\n    at item.request.gen.end (/Users/juanquenga/Documents/GitHub/banhammer/node_modules/@yamdbf/core/node_modules/discord.js/src/client/rest/RequestHandlers/Sequential.js:68:65)\n    at then (/Users/juanquenga/Documents/GitHub/banhammer/node_modules/snekfetch/src/index.js:215:21)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"name":"DiscordAPIError","message":"Error when banning in guild '596817311277645849' for 'Missing Permissions'. Missing Permissions","code":50013,"level":"error","stack":"DiscordAPIError: Missing Permissions\n    at item.request.gen.end (/Users/juanquenga/Documents/GitHub/banhammer/node_modules/@yamdbf/core/node_modules/discord.js/src/client/rest/RequestHandlers/Sequential.js:68:65)\n    at then (/Users/juanquenga/Documents/GitHub/banhammer/node_modules/snekfetch/src/index.js:215:21)\n    at process._tickCallback (internal/process/next_tick.js:68:7)"}
+{"level":"info","message":"Initiating BanHammer..."}
+{"level":"info","message":"BanHammerClient has been started."}
+{"level":"info","message":"1562365497704"}
+{"level":"info","message":"BanHammerClient with shardId #0 is ready (3 guilds)"}
