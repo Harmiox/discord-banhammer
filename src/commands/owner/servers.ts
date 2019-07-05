@@ -20,6 +20,6 @@ import { AppLogger } from '../../util/app-logger';
 	 }
 
 	 public async action(message: Message, args: string[]): Promise<Message | Message[]> {
-		return message.author.send(`Currently in these servers:\n\`\`\`HTTP\n${this.client.guilds.map((g) => `${g.name}: ${g.memberCount} users`).join('\n')}\`\`\``);
+		return message.author.send(`Currently in these servers:\n\`\`\`HTTP\n${this.client.guilds.map((g) => `${g.name}(${g.id}): ${g.memberCount} users`).join('\n')}\`\`\``);
 	 }
  }
