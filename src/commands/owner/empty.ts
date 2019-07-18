@@ -3,19 +3,19 @@ import { BanHammerClient } from '../../client/banhammer-client';
 import { AppLogger } from '../../util/app-logger';
 
 /**
- * Clear Command
+ * Empty Command
  */
 
  export default class extends Command<BanHammerClient> {
-	 private logger: AppLogger = new AppLogger('ClearCommand');
+	 private logger: AppLogger = new AppLogger('EmptyCommand');
 
 	 public constructor() {
 		 super({
-			desc: 'For testing, clears bans and unbans logged in the database.',
+			desc: 'For testing, empties the database where bans and unbans are logged.',
 			group: 'Owner',
-			name: 'clear',
+			name: 'empty',
 			ownerOnly: true,
-			usage: '<prefix>clear'
+			usage: '<prefix>empty'
 		 });
 	 }
 
@@ -23,6 +23,6 @@ import { AppLogger } from '../../util/app-logger';
 		this.client.storage.set('banned', []);
 		this.client.storage.set('unbanned', []);
 
-		return message.reply('Cleared.');
+		return message.reply('The databases have been emptied.');
 	 }
  }
