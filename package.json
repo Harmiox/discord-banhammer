@@ -1,7 +1,7 @@
 {
   "name": "banhammer",
   "version": "1.0.0",
-  "description": "Easily manage bans between multiple discord server.",
+  "description": "Easily manage bans between multiple discord servers.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
