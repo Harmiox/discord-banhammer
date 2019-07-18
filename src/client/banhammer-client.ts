@@ -1,7 +1,7 @@
 import { Client, Message } from '@yamdbf/core';
 import { ConfigService } from '../config/config.service';
-import { AppLogger } from '../util/app-logger';
 import { checkChannelPermissions } from '../middlewares/authorized-channel';
+import { AppLogger } from '../util/app-logger';
 
 /**
  * BanHammer Client
@@ -13,12 +13,12 @@ export class BanHammerClient extends Client {
 
 	constructor(config: ConfigService) {
 		super({
-			token: config.discord.token,
-			readyText: 'BanHammer Client Ready',
-			unknownCommandError: false,
 			commandsDir: './dist/commands',
-      pause: true,
-			owner: ['228781414986809344'] // Harmiox,
+			owner: ['228781414986809344'], // Harmiox,
+			pause: true,
+			readyText: 'BanHammer Client Ready',
+			token: config.discord.token,
+			unknownCommandError: false
 		});
 
 		// Attach middleware
@@ -40,8 +40,7 @@ export class BanHammerClient extends Client {
 	}
 
 	private onReady() {
-		const shardId: number = this.shard == null ? 0 : this.shard.id;
-    this.logger.info(`${this.logger.context} with shardId #${shardId} is ready (${this.guilds.size} guilds)`);
+    this.logger.info(`${this.user.username} is ready (${this.guilds.size} guilds)`);
 	}
 
 	private onWarn(info: {}): void {

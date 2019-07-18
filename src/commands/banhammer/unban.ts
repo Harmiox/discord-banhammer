@@ -29,20 +29,21 @@ import { AppLogger } from '../../util/app-logger';
 
 		// Update database
 		const unbannedArray: ILoggedAction[] = await this.client.storage.get('unbanned') || [];
+		const authorId: string = message.author ? message.author.id : '';
 		unbannedArray.push({
-			authorId: message.author.id,
+			authorId,
 			reason,
 			userId
 		});
 		this.client.storage.set('unbanned', unbannedArray);
 
 		// Execute the bans
-		let failed: { name: string, reason: string }[] = [];
-		let succeeded: { name: string }[] = [];
+		const failed: Array<{ name: string, reason: string }> = [];
+		const succeeded: Array<{ name: string }> = [];
 
 		for (const guild of this.client.guilds.values()) {
 			try {
-				await guild.unban(userId);
+				await guild.members.unban(userId);
 				succeeded.push({ name: guild.name });
 			} catch (error) {
 				this.logger.error(`Error when banning in guild '${guild.id}' for '${error.message}'. `, error);
